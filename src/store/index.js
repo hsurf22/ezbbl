@@ -4,7 +4,15 @@ import axios from 'axios';
 
 Vue.use(Vuex);
 
-const ringtonesBaseURL = 'https://ezbbl.com/ringtones';
+let ringtonesBaseURL = null;
+
+if (process.env.NODE_ENV === 'development') {
+  //console.log('In Dev Mode');
+  ringtonesBaseURL = 'http://localhost/ringtones';
+} else {
+  //console.log('In Live Mode');
+  ringtonesBaseURL = 'https://ezbbl.com/ringtones';
+}
 
 export default new Vuex.Store({
   state: {

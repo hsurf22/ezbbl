@@ -1,25 +1,22 @@
 <template>
   <v-container>
-    <h3>Ringtones</h3>
+    <h2 class="mb-6">All Ringtones</h2>
     <v-row v-if="ringtones">
       <v-col cols="12" sm="6" v-for="(list, count) in ringtones" :key="count">
-        <v-card color="orange">
-          <v-card-text>
-            <p class="text-h5 text--primary">#{{ count + 1 }}</p>
-            <div v-for="(ringtone, c) in list" :key="c" class="mb-3">
-              <div>{{ ringtone.artist }}</div>
-              <h3>{{ ringtone.title }}</h3>
-            </div>
-          </v-card-text>
-          <v-card-actions>
-            <v-btn
-              depressed
-              color="primary"
-              :to="{ name: 'Download', query: { number: count + 1 } }"
-            >
-              Go
-            </v-btn>
-          </v-card-actions>
+        <v-card color="info" class="pa-5">
+          <h3 class="mb-6 font-weight-bold">Ringtones #{{ count + 1 }}</h3>
+          <div v-for="(ringtone, c) in list" :key="c" class="mb-5">
+            <div>{{ ringtone.artist }}</div>
+            <h4>{{ ringtone.title }}</h4>
+          </div>
+          <v-btn
+            class="mt-4"
+            x-large
+            depressed
+            :to="{ name: 'Ringtones', query: { number: count + 1 } }"
+          >
+            Go
+          </v-btn>
         </v-card>
       </v-col>
     </v-row>

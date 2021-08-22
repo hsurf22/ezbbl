@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Download from '../views/Download.vue';
+import Ringtones from '../views/Ringtones.vue';
 
 Vue.use(VueRouter);
 
@@ -12,9 +12,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/download',
-    name: 'Download',
-    component: Download
+    path: '/ringtones',
+    name: 'Ringtones',
+    component: Ringtones
   },
   {
     path: '/about',

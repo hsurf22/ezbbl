@@ -1,17 +1,24 @@
 <template>
   <v-app>
     <v-main>
-      <v-container>
-        <h1>Welcome to ezBBL. Enjoy free ringtones.</h1>
-      </v-container>
+      <div class="primary py-10 mb-10">
+        <v-container>
+          <div
+            :class="this.$vuetify.breakpoint.mdAndUp ? 'h2' : 'h3'"
+            class="font-weight-bold white--text"
+          >
+            Welcome to ezBBL. Enjoy free ringtones.
+          </div>
+        </v-container>
+      </div>
 
       <router-view />
 
-      <div class="primary mt-10">
+      <div class="primary py-10 mt-10">
         <v-container>
-          <h2 class="white--text">
+          <h3 class="white--text">
             We are a small team of people who love creating ringtones.
-          </h2>
+          </h3>
         </v-container>
       </div>
     </v-main>
@@ -27,3 +34,7 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+@import '@/css/global.scss';
+</style>
