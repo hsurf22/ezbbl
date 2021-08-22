@@ -1,19 +1,28 @@
 <template>
   <v-container>
-    <v-btn v-if="false" :to="{ name: 'About' }">About</v-btn>
-
     <h3>Ringtones</h3>
-    <div v-if="ringtones" class="ma-n2">
-      <v-btn
-        v-for="(ringtones, count) in ringtones"
-        :key="count"
-        class="ma-2"
-        color="orange"
-        :to="{ name: 'Download', query: { number: count + 1 } }"
-      >
-        #{{ count + 1 }}
-      </v-btn>
-    </div>
+    <v-row v-if="ringtones">
+      <v-col cols="12" sm="6" v-for="(list, count) in ringtones" :key="count">
+        <v-card color="orange">
+          <v-card-text>
+            <p class="text-h5 text--primary">#{{ count + 1 }}</p>
+            <div v-for="(ringtone, c) in list" :key="c" class="mb-3">
+              <div>{{ ringtone.artist }}</div>
+              <h3>{{ ringtone.title }}</h3>
+            </div>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn
+              depressed
+              color="primary"
+              :to="{ name: 'Download', query: { number: count + 1 } }"
+            >
+              Go
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
