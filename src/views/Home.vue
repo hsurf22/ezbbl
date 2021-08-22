@@ -1,15 +1,19 @@
 <template>
-  <hello-world />
+  <div>
+    <h1 v-if="!soundAssets">NULL</h1>
+    <pre v-else>{{ soundAssets }}</pre>
+  </div>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
-
 export default {
-  name: "Home",
-
-  components: {
-    HelloWorld,
+  name: 'Home',
+  components: {},
+  computed: {
+    soundAssets() {
+      return this.$store.getters.getSoundAssets;
+    }
   },
+  mounted() {}
 };
 </script>
