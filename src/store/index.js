@@ -1,29 +1,31 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
 
 Vue.use(Vuex);
 
-const urlSoundAssets = 'http://localhost/SoundAssets/index.json';
-const headers = { Accept: 'application/json' };
+const ringtonesBaseURL = 'http://localhost/Ringtones';
 
 export default new Vuex.Store({
   state: {
-    soundAssets: null
+    ringtones: null,
+    ringtonesBaseURL: ringtonesBaseURL
   },
   mutations: {
-    setSoundAssets(state, payload) {
-      state.soundAssets = payload;
+    setRingtones(state, payload) {
+      state.ringtones = payload;
     }
   },
   actions: {
-    async setSoundAssets(state) {
-      const assets = await fetch(urlSoundAssets, { headers });
-      const assetsJson = await assets.json();
-      state.commit('setSoundAssets', assetsJson);
+    async setRingtones(state) {
+      await axios.get(`${ringtonesBaseURL}/index.json`).then((resp) => {
+        state.commit('setRingtones', resp.data);
+      });
     }
   },
   modules: {},
   getters: {
-    getSoundAssets: (state) => state.soundAssets
+    getRingtones: (state) => state.ringtones,
+    getRingtonesBaseURL: (state) => state.ringtonesBaseURL
   }
 });

@@ -1,6 +1,9 @@
 <template>
   <v-app>
     <v-main>
+      <v-container>
+        <h2>Welcome to ezBBL. Enjoy free ringtones.</h2>
+      </v-container>
       <router-view />
     </v-main>
   </v-app>
@@ -10,8 +13,8 @@
 export default {
   name: 'App',
   data: () => ({}),
-  mounted() {
-    this.$store.dispatch('setSoundAssets');
+  beforeCreate() {
+    this.$store.dispatch('setRingtones');
   }
 };
 </script>
