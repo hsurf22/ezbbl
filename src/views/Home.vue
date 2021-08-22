@@ -5,9 +5,9 @@
       <v-col cols="12" sm="6" v-for="(list, count) in ringtones" :key="count">
         <v-card color="info" class="pa-5">
           <h3 class="mb-6 font-weight-bold">Ringtones #{{ count + 1 }}</h3>
-          <div v-for="(ringtone, c) in list" :key="c" class="mb-5">
-            <div>{{ ringtone.artist }}</div>
-            <h4>{{ ringtone.title }}</h4>
+          <div v-for="(ringtone, c) in list" :key="c" class="mb-3">
+            <h5 class="font-weight-regular">{{ ringtone.artist }}</h5>
+            <div class="font-weight-bold">{{ ringtone.title }}</div>
           </div>
           <v-btn
             class="mt-4"
