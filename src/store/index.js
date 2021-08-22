@@ -4,7 +4,7 @@ import axios from 'axios';
 
 Vue.use(Vuex);
 
-const ringtonesBaseURL = 'http://localhost/Ringtones';
+const ringtonesBaseURL = 'https://ezbbl.com/ringtones';
 
 export default new Vuex.Store({
   state: {
