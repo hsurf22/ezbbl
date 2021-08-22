@@ -22,11 +22,18 @@
           <div class="mb-6">Remixed, Shortened</div>
           <audio controls>
             <source
-              :src="`${ringtonesBaseURL}${ringtone.file}`"
+              src="`${ringtonesBaseURL}${ringtone.file}`"
               type="audio/mpeg"
             />
             Your browser does not support the audio tag.
           </audio>
+          <v-btn
+            x-large
+            depressed
+            :href="`${ringtonesBaseURL}${ringtone.file}`"
+          >
+            Download
+          </v-btn>
         </v-card>
       </v-col>
     </v-row>
