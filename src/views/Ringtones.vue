@@ -7,6 +7,7 @@
 
     <div class="mb-6">
       <h2>Ringtones #{{ number }}</h2>
+      <div class="mt-4">Scan the QR code to navigate to this page.</div>
       <vue-qrcode :scale="7" :value="currentPage" />
     </div>
 
@@ -58,6 +59,13 @@ export default {
   },
   mounted() {
     this.number = this.$route.query.number;
+
+    // This prevents the page from scrolling down to where it was previously.
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    // This is needed if the user scrolls down during page load and you want to make sure the page is scrolled to the top once it's fully loaded. This has Cross-browser support.
+    window.scrollTo(0, 0);
   }
 };
 </script>
