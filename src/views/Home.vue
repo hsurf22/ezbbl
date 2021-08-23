@@ -6,14 +6,14 @@
         <v-card color="info" class="pa-5">
           <h3 class="mb-6 font-weight-bold">Ringtones #{{ count + 1 }}</h3>
           <div v-for="(ringtone, c) in list" :key="c" class="mb-3">
-            <h5 class="font-weight-regular">{{ ringtone.artist }}</h5>
+            <h6 class="font-weight-regular">{{ ringtone.artist }}</h6>
             <div class="font-weight-bold">{{ ringtone.title }}</div>
           </div>
           <v-btn
             class="mt-4"
             x-large
             depressed
-            :to="{ name: 'Ringtones', query: { number: count + 1 } }"
+            :to="{ name: 'Ringtones', query: { n: count + 1 } }"
           >
             Click
           </v-btn>

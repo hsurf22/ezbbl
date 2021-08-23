@@ -58,7 +58,7 @@ export default {
     }
   },
   mounted() {
-    this.number = this.$route.query.number;
+    this.number = this.$route.query.n;
 
     // This prevents the page from scrolling down to where it was previously.
     if ('scrollRestoration' in history) {
