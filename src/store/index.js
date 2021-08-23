@@ -8,10 +8,10 @@ let ringtonesBaseURL = null;
 
 if (process.env.NODE_ENV === 'development') {
   //console.log('In Dev Mode');
-  ringtonesBaseURL = 'http://localhost/ringtones';
+  ringtonesBaseURL = 'http://localhost/data/ringtones';
 } else {
   //console.log('In Live Mode');
-  ringtonesBaseURL = 'https://ezbbl.com/ringtones';
+  ringtonesBaseURL = 'https://ezbbl.com/data/ringtones';
 }
 
 export default new Vuex.Store({
