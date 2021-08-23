@@ -15,7 +15,7 @@
             depressed
             :to="{ name: 'Ringtones', query: { number: count + 1 } }"
           >
-            Go
+            Click
           </v-btn>
         </v-card>
       </v-col>
