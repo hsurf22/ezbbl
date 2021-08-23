@@ -5,7 +5,10 @@
       HOME
     </v-btn>
 
-    <h2 class="mb-6">Ringtones #{{ number }}</h2>
+    <div class="mb-6">
+      <h2>Ringtones #{{ number }}</h2>
+      <vue-qrcode :scale="7" :value="currentPage" />
+    </div>
 
     <v-row v-if="ringtones">
       <v-col
@@ -34,13 +37,18 @@
 </template>
 
 <script>
+import VueQrcode from 'vue-qrcode';
+
 export default {
   name: 'Download',
-  components: {},
+  components: { VueQrcode },
   data() {
     return { number: null };
   },
   computed: {
+    currentPage() {
+      return window.location.href;
+    },
     ringtones() {
       return this.$store.getters.getRingtones;
     },
