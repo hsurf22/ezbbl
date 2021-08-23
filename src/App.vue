@@ -7,7 +7,7 @@
             :class="this.$vuetify.breakpoint.mdAndUp ? 'h2' : 'h3'"
             class="font-weight-bold white--text"
           >
-            Welcome to ezBBL. Enjoy free ringtones.
+            Welcome to ezBBL.com Enjoy free ringtones.
           </div>
         </v-container>
       </div>
