@@ -1,5 +1,9 @@
-// Colors
-//$button-color: #ffc800;
+//Fix container size
+@media (min-width: 1904px) {
+  .container {
+    max-width: 1185px !important;
+  }
+}
 
 h1,
 .h1 {
